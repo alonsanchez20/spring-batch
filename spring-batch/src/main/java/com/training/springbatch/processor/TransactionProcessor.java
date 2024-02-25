@@ -15,12 +15,14 @@ public class TransactionProcessor implements ItemProcessor<TransactionInput, Tra
     @Override
     public TransactionOutput process(TransactionInput item) throws Exception {
 
-        return TransactionOutput.builder()
-                .id(item.getId())
-                .type(item.getType())
-                .amount(item.getAmount())
-                .timestamp(item.getTimestamp())
-                .reviewed(true)
-                .build();
+        TransactionOutput transactionOutput = new TransactionOutput();
+
+        transactionOutput.setId(item.getId());
+        transactionOutput.setType(item.getType());
+        transactionOutput.setAmount(item.getAmount());
+        transactionOutput.setTimestamp(item.getTimestamp());
+        transactionOutput.setReviewed(true);
+
+        return transactionOutput;
     }
 }

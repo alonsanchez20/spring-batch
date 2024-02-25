@@ -1,14 +1,13 @@
+/*
 CREATE TABLE IF NOT EXISTS transaccion
 (
-    id    LONG    PRIMARY    KEY,
+    id    BIGINT    PRIMARY    KEY,
     fecha    TIMESTAMP    NOT    NULL,
     tipo    VARCHAR(    255) NOT NULL,
     importe DECIMAL(    10,    2) NOT NULL,
     reviewed BOOLEAN NOT NULL
 );
 
-
-/*
 INSERT INTO transaccion (id, fecha, tipo, importe)
 VALUES ('1234567900', '2024-02-03 09:15:00', 'DEPOSITO', 700.00),
        ('1234567901', '2024-02-01 13:45:00', 'RETIRO', 150.00),

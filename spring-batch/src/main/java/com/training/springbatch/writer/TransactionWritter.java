@@ -8,6 +8,8 @@ import org.springframework.batch.item.Chunk;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -24,6 +26,7 @@ public class TransactionWritter implements ItemWriter<TransactionOutput> {
 
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED)
     public void write(Chunk<? extends TransactionOutput> transactionOutputs) throws Exception {
 
         for (TransactionOutput transaction : transactionOutputs) {
