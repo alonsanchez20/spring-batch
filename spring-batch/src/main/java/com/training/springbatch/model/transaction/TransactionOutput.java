@@ -15,18 +15,30 @@ import java.time.LocalDateTime;
 @Entity
 public class TransactionOutput {
 
+
     @Id
-    private BigInteger id;
+    private Long id;
     private LocalDateTime timestamp;
     private String type;
     private BigDecimal amount;
     private Boolean reviewed;
 
-    public BigInteger getId() {
+    public TransactionOutput(Long id, LocalDateTime timestamp, String type, BigDecimal amount, Boolean reviewed) {
+        this.id = id;
+        this.timestamp = timestamp;
+        this.type = type;
+        this.amount = amount;
+        this.reviewed = reviewed;
+    }
+
+    public TransactionOutput() {
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(BigInteger id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

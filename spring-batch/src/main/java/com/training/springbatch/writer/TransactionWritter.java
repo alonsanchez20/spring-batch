@@ -29,6 +29,9 @@ public class TransactionWritter implements ItemWriter<TransactionOutput> {
     @Transactional(propagation = Propagation.REQUIRED)
     public void write(Chunk<? extends TransactionOutput> transactionOutputs) throws Exception {
 
+        LOGGER.info("{}", transactionOutputs.size());
+
+
         for (TransactionOutput transaction : transactionOutputs) {
 
             transactionRepository.save(transaction);

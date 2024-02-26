@@ -73,6 +73,7 @@ public class TransactionConfig {
                 .names(new String[] { "id", "timestamp", "type", "amount"})
                 .fieldSetMapper(new BeanWrapperFieldSetMapper<TransactionInput>() {{
                     setTargetType(TransactionInput.class);
+
                 }})
                 .build();
     }

@@ -11,24 +11,34 @@ import java.time.LocalDateTime;
 
 public class TransactionInput {
 
-    private BigInteger id;
-    private LocalDateTime timestamp;
+    public TransactionInput(Long id, String timestamp, String type, BigDecimal amount) {
+        this.id = id;
+        this.timestamp = timestamp;
+        this.type = type;
+        this.amount = amount;
+    }
+
+    public TransactionInput() {
+    }
+
+    private Long id;
+    private String timestamp;
     private String type;
     private BigDecimal amount;
 
-    public BigInteger getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(BigInteger id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public LocalDateTime getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 
